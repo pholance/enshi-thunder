@@ -3,7 +3,7 @@
     <head>
         <title>恩施州雷击数据</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="initial-scale=1.1, user-scalable=no" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, height=device-height" />
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <style>
             html {height:100%}
@@ -68,6 +68,21 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">区域详细分析报告</h4>
                     </div>
+                    <div class="modal-body">
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#hour" aria-controls="home" role="tab" data-toggle="tab">分时统计</a></li>
+                                <li role="presentation"><a href="#month" aria-controls="profile" role="tab" data-toggle="tab">分月统计</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="hour" style="height: 400px;width: 868px"></div>
+                                <div role="tabpanel" class="tab-pane" id="month" style="height: 400px;width: 868px"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,6 +95,7 @@
             }
             window.onload = loadScript;
         </script>
+        <script src="js/echarts-all.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/thunder.js"></script>
