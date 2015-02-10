@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>恩施州雷击数据</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, height=device-height" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html {height:100%}
+            body {height:100%;margin:0px;padding:0px}
+            #container {height:100%}
+            #desc{
+                width: 140px;
+                height: 300px;
+                position: fixed;
+                left: 3px;
+                bottom: 50px;
+                background-color: antiquewhite;
+                z-index: 10000;
+                border: 1px solid appworkspace;
+            }
+            .example {
+                width: 20px;
+                height: 10px;
+                float: left;
+                margin-right: 10px;
+                border: 1px black solid;
+            }
+            ul {
+                list-style-type: none;
+                padding-left: 10px;
+                font-size: xx-small;
+            }
+            #desc li {
+                margin-bottom: 8px;
+                line-height: 1;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div id="container">请耐等待数据加载完毕...时间视网络状况而定</div>
+        <div id="desc">
+            <span style="font-size: xx-small;margin-left: 8px;margin-top: 6px">图例</span>
+            <ul>
+                <li><div class="example" style="background-color: white"></div>Ng&lt;0.25</li>
+                <li><div class="example" style="background-color: #BEBEFA"></div>0.25&leq;Ng&leq;0.5</li>
+                <li><div class="example" style="background-color: #7F84FA"></div>0.5&lt;Ng&leq;0.75</li>
+                <li><div class="example" style="background-color: #0C45C2"></div>0.75&lt;Ng&leq;1</li>
+                <li><div class="example" style="background-color: #D1FD92"></div>1&lt;Ng&leq;1.25</li>
+                <li><div class="example" style="background-color: #5CFDA9"></div>1.25&lt;Ng&leq;1.5</li>
+                <li><div class="example" style="background-color: #22CE6C"></div>1.5&lt;Ng&leq;1.75</li>
+                <li><div class="example" style="background-color: #FEBF7E"></div>1.75&lt;Ng&leq;2</li>
+                <li><div class="example" style="background-color: #FFFD89"></div>2&lt;Ng&leq;2.25</li>
+                <li><div class="example" style="background-color: #DEDE30"></div>2.25&lt;Ng&leq;2.5</li>
+                <li><div class="example" style="background-color: #E0B0D3"></div>2.5&lt;Ng&leq;3</li>
+                <li><div class="example" style="background-color: #FC29F9"></div>3&lt;Ng&leq;5</li>
+                <li><div class="example" style="background-color: #FA101C"></div>Ng&gt;5</li>
+            </ul>
+        </div>
+        <div id="dialog" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#hour" aria-controls="home" role="tab" data-toggle="tab">分时统计</a></li>
+                                <li role="presentation"><a href="#month" aria-controls="profile" role="tab" data-toggle="tab">分月统计</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="hour" style="height: 400px;width: 868px"></div>
+                                <div role="tabpanel" class="tab-pane" id="month" style="height: 400px;width: 868px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function loadScript() {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = "http://webapi.amap.com/maps?v=1.3&key=3a8fecd6369b28511624dde029a8da15&callback=init";
+                document.body.appendChild(script);
+            }
+            window.onload = loadScript;
+        </script>
+        <script src="js/echarts-all.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/thunder.js"></script>
+    </body>
+</html>
