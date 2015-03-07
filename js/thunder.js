@@ -88,7 +88,7 @@ function createGrid() {
             var lng = beginLng + (stepLng * i);
             for (var j = 0; j < 24; j++) {
                 var lat = beginLat + (stepLat * j);
-                var paths = new Array();
+                var paths = [];
                 var lb = new AMap.LngLat(lng, lat),
                     lt = new AMap.LngLat(lng, lat + stepLat),
                     rt = new AMap.LngLat(lng + stepLng, lat + stepLat),
@@ -219,7 +219,7 @@ function parseGrid(data) {
             strength.push(cloud[i].strength);
         }
         var info = new Array();
-        info.push("Ng = " + avg.toFixed(2) + "&nbsp;&nbsp;&nbsp;&nbsp;最大强度：" + Math.max.apply("Math", strength));
+        info.push("Ng = " + avg.toFixed(2) + "&nbsp;&nbsp;&nbsp;&nbsp;最大强度：" + Math.max.apply("Math", strength) + "kA");
         info.push("雷击次数：" + e.count);
         info.push("<b>雷电强度(S)分布：</b>");
         info.push("S&leq;20kA：" + function () {
@@ -270,7 +270,7 @@ function parseGrid(data) {
         }() + "次");
 
         var infoWindow = new AMap.InfoWindow({
-            content: info.join("<br>") + '<br><button id="detail" class="btn btn-primary">详细分析报告</button>'
+            content: info.join("<br>") + '<br><button id="detail" class="btn btn-primary">分时/分月 分析报告</button>'
         });
 
         AMap.event.addListener(grid, "click", function (e) {

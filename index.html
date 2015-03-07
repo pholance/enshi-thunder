@@ -17,9 +17,7 @@
                 bottom: 50px;
                 background-color: antiquewhite;
                 z-index: 10000;
-                border-color: appworkspace;
-                border-width: 1px;
-                border-style: solid;
+                border: 1px solid appworkspace;
             }
             .example {
                 width: 20px;
@@ -64,11 +62,8 @@
         <div id="dialog" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">区域详细分析报告</h4>
-                    </div>
                     <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <div role="tabpanel">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
